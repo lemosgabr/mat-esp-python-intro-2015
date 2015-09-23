@@ -29,3 +29,12 @@ print("5 menores numeros", lista[0:5])
 
 print("5 maiores numeros", lista[n-5:n])
 
+x = range (0, n)
+y = lista
+plt.figure()
+plt.title("Lista final")
+plt.xlabel("Indices")
+plt.ylabel("Numeros")
+plt.plot(x,y,'ok')
+plt.savefig("fig/minha-figura2.png")
+plt.close()
