@@ -22,6 +22,15 @@ for i in range (0,n-1,1): #primeira linha da função. Para i com valores entre 
             tmp = lista[i] #criado slot temporário com mesmo valor "lista[i]" para não haver perda dos dados 
             lista[i] = lista[j] #substituido valor de lista[i] com lista[j] para que o valor que vem primeiro seja menor
             lista[j] = tmp #substituido valor de lista[j] com tmp (antigo lista[i] para realizar a mudança dos valores. tmp será excluída depois disso.
+            x = range (0, n)
+            y = lista
+            plt.figure()
+            plt.title("Lista original")
+            plt.xlabel("Indices")
+            plt.ylabel("Numeros")
+            plt.plot(x,y,'ok')
+            plt.savefig("fig/bubble-troca-{}.png".format(i+1))
+            plt.close()
 
 print("lista em ordem crescente", lista) #lista já está organizada
 
