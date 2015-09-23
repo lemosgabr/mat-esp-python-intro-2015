@@ -2,7 +2,7 @@ n = 20 #aqui especifica-se a variável "n" para usarmos depois. São quantos nú
 
 lista = [11, 18, 3, 1, 16, 12, 6, 19, 5, 0, 14, 4, 17, 9, 13, 7, 10, 15, 2, 8] #aqui especifica-se a variável "lista" para usarmos depois
 
-print "lista original", lista #lista antes de organizar
+print("lista original", lista) #lista antes de organizar
 
 for i in range (0,n-1,1): #primeira linha da função. Para i com valores entre "(inicial,final,intervalo)" sendo inicial 0, final n-1 (penúltimo no.), intervalo 1 (de 1 em 1)
     for j in range (i+1,n,1): #mesmos comandos da primeira linha da função. Aqui adicionamos em vez de 0 o próprio "i" + 1, que já foi especificado. Isso define a "área" em que nosso programa irá atuar
@@ -11,4 +11,9 @@ for i in range (0,n-1,1): #primeira linha da função. Para i com valores entre 
 		   lista[i] = lista[j] #substituido valor de lista[i] com lista[j] para que o valor que vem primeiro seja menor
 		   lista[j] = tmp #substituido valor de lista[j] com tmp (antigo lista[i] para realizar a mudança dos valores. tmp será excluída depois disso.
 
-print "lista em ordem crescente", lista #lista já está organizada
+print("lista em ordem crescente", lista) #lista já está organizada
+
+print("5 menores numeros", lista[0:5])
+
+print("5 maiores numeros", lista[n-5:n])
+
