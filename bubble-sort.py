@@ -1,6 +1,18 @@
+import matplotlib.pyplot as plt
+
 n = 20 #aqui especifica-se a variável "n" para usarmos depois. São quantos números que temos dentro da lista (no caso, 20)
 
 lista = [11, 18, 3, 1, 16, 12, 6, 19, 5, 0, 14, 4, 17, 9, 13, 7, 10, 15, 2, 8] #aqui especifica-se a variável "lista" para usarmos depois
+
+x = range (0, n)
+y = lista
+plt.figure()
+plt.title("Lista original")
+plt.xlabel("Indices")
+plt.ylabel("Numeros")
+plt.plot(x,y,'ok')
+plt.savefig("fig/minha-figura1.png")
+plt.close()
 
 print("lista original", lista) #lista antes de organizar
 
