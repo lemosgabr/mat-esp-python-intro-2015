@@ -11,10 +11,12 @@ plt.title("Lista original")
 plt.xlabel("Indices")
 plt.ylabel("Numeros")
 plt.plot(x,y,'ok')
-plt.savefig("fig/minha-figura1.png")
+plt.savefig("fig/bubble-inicio.png")
 plt.close()
 
 print("lista original", lista) #lista antes de organizar
+
+a = 0
 
 for i in range (0,n-1,1): #primeira linha da função. Para i com valores entre "(inicial,final,intervalo)" sendo inicial 0, final n-1 (penúltimo no.), intervalo 1 (de 1 em 1)
     for j in range (i+1,n,1): #mesmos comandos da primeira linha da função. Aqui adicionamos em vez de 0 o próprio "i" + 1, que já foi especificado. Isso define a "área" em que nosso programa irá atuar
@@ -22,14 +24,15 @@ for i in range (0,n-1,1): #primeira linha da função. Para i com valores entre 
             tmp = lista[i] #criado slot temporário com mesmo valor "lista[i]" para não haver perda dos dados 
             lista[i] = lista[j] #substituido valor de lista[i] com lista[j] para que o valor que vem primeiro seja menor
             lista[j] = tmp #substituido valor de lista[j] com tmp (antigo lista[i] para realizar a mudança dos valores. tmp será excluída depois disso.
+            a = a+1
             x = range (0, n)
             y = lista
             plt.figure()
-            plt.title("Lista original")
+            plt.title("Grafico da iteração {}".format(a))
             plt.xlabel("Indices")
             plt.ylabel("Numeros")
             plt.plot(x,y,'ok')
-            plt.savefig("fig/bubble-troca-{}.png".format(i+1))
+            plt.savefig("fig/bubble-troca-{}.png".format(a))
             plt.close()
 
 print("lista em ordem crescente", lista) #lista já está organizada
@@ -45,5 +48,5 @@ plt.title("Lista final")
 plt.xlabel("Indices")
 plt.ylabel("Numeros")
 plt.plot(x,y,'ok')
-plt.savefig("fig/minha-figura2.png")
+plt.savefig("fig/bubble-final.png")
 plt.close()
