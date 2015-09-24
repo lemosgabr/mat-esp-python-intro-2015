@@ -18,8 +18,21 @@ print("lista original", lista) #lista antes de organizar
 
 a = 0
 
+iter = 0
 for i in range (0,n-1,1): #primeira linha da função. Para i com valores entre "(inicial,final,intervalo)" sendo inicial 0, final n-1 (penúltimo no.), intervalo 1 (de 1 em 1)
     for j in range (i+1,n,1): #mesmos comandos da primeira linha da função. Aqui adicionamos em vez de 0 o próprio "i" + 1, que já foi especificado. Isso define a "área" em que nosso programa irá atuar
+        iter = iter+1
+        x = range (0, n)
+        y = lista
+        plt.figure()
+        plt.title("Grafico da iteraçao {}".format(iter))
+        plt.xlabel("Indices")
+        plt.ylabel("Numeros")
+        plt.plot(x,y,'ok')
+        plt.plot(i, lista[i], 'or')
+        plt.plot(j, lista[j], 'ob')
+        plt.savefig("fig/bubble-it-{}.png".format(iter))
+        plt.close()
         if lista[i] > lista[j]: #aqui inicia-se a análise de valores para organizá-los. se o valor que estamos analisando dentro da lista i for maior que o da lista j, o programa executará o que está dentro daqui. Nosso intuito é deixar os números em ordem crescente
             tmp = lista[i] #criado slot temporário com mesmo valor "lista[i]" para não haver perda dos dados 
             lista[i] = lista[j] #substituido valor de lista[i] com lista[j] para que o valor que vem primeiro seja menor
@@ -28,7 +41,7 @@ for i in range (0,n-1,1): #primeira linha da função. Para i com valores entre 
             x = range (0, n)
             y = lista
             plt.figure()
-            plt.title("Grafico da iteração {}".format(a))
+            plt.title("Grafico da troca {}".format(a))
             plt.xlabel("Indices")
             plt.ylabel("Numeros")
             plt.plot(x,y,'ok')
